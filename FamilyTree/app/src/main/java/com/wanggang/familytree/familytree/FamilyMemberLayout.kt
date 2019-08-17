@@ -11,6 +11,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import com.wanggang.familytree.AddOrEditMemberActivity
 import com.wanggang.familytree.Main2Activity
 import com.wanggang.familytree.R
 import com.wanggang.familytree.dp
@@ -142,7 +143,7 @@ class FamilyMemberLayout : ViewGroup {
                 if (which == 3) {
 
                 } else {
-                    val intent = Intent(context, Main2Activity::class.java)
+                    val intent = Intent(context, AddOrEditMemberActivity::class.java)
                     when (which) {
                         0 -> intent.putExtra("id", mClickModel?.memberEntity?.id)
                         1 -> intent.putExtra("fatherId", mClickModel?.memberEntity?.id)

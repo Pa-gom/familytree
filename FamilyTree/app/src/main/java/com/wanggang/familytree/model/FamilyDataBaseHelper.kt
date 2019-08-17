@@ -2,6 +2,8 @@ package com.wanggang.familytree.model
 
 import android.arch.persistence.room.Room
 import android.content.Context
+import android.support.v7.app.AppCompatActivity
+import com.wanggang.familytree.MainActivity
 
 class FamilyDataBaseHelper constructor(context: Context) {
 

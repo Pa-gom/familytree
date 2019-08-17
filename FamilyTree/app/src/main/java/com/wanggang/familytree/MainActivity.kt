@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.wanggang.familytree.model.FamilyDataBaseHelper
 import com.wanggang.familytree.model.FamilyMemberEntity
-import com.wanggang.familytree.model.FamilyMemberModel
 import com.wanggang.familytree.widget.FamilyTreeAdapter
 import com.wanggang.familytree.widget.PersonEntity
 import io.reactivex.BackpressureStrategy
@@ -48,13 +47,13 @@ class MainActivity : AppCompatActivity() {
                 // 应用第一次启动，则王数据库插入一些数据
 
                 // 插入第一条数据，同时也是整个家族树的跟节点
-                var familyMember = FamilyMemberEntity("王根")
+                var familyMember = FamilyMemberEntity("王根ss")
                 familyMember.imagePath = "111.jpg"
                 familyMember.phone = "18156094171"
                 familyMember.sex = 1
                 FamilyDataBaseHelper.getInstance(this).insertMember(familyMember)
 
-                familyMember = FamilyMemberEntity("王明")
+                familyMember = FamilyMemberEntity("王明22")
                 familyMember.imagePath = "222.jpg"
                 familyMember.phone = "18156096666"
                 familyMember.fatherId = 1 // 父亲id为1，表示其父亲未第1条插入的数据，也就是上面的王根

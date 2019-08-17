@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "120ca30a06ac36903e6a14f8c33e9f66",
+    "identityHash": "013eff1c66a7e98a13bf0bf89681e343",
     "entities": [
       {
         "tableName": "members",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fatherId` INTEGER, `spouseId` INTEGER, `sex` INTEGER NOT NULL, `phone` TEXT, `imagePath` TEXT, `name` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fatherId` INTEGER, `spouseId` INTEGER, `sex` INTEGER NOT NULL, `phone` TEXT, `imagePath` TEXT, `shixi` TEXT, `zibei` TEXT, `tanghao` TEXT, `exist` INTEGER, `introduce` TEXT, `name` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -45,6 +45,36 @@
             "notNull": false
           },
           {
+            "fieldPath": "shixi",
+            "columnName": "shixi",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "zibei",
+            "columnName": "zibei",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tanghao",
+            "columnName": "tanghao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exist",
+            "columnName": "exist",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "introduce",
+            "columnName": "introduce",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "name",
             "columnName": "name",
             "affinity": "TEXT",
@@ -63,7 +93,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"120ca30a06ac36903e6a14f8c33e9f66\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"013eff1c66a7e98a13bf0bf89681e343\")"
     ]
   }
 }

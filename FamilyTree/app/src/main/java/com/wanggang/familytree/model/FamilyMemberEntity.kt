@@ -33,7 +33,7 @@ data class FamilyMemberEntity(var name: String) {
     @SerializedName("sex")
     var sex: Int = 0
 
-    // 头像路径
+    // 手机号
     @ColumnInfo(name = "phone")
     @SerializedName("phone")
     var phone: String? = null // 手机号
@@ -42,6 +42,31 @@ data class FamilyMemberEntity(var name: String) {
     @ColumnInfo(name = "imagePath")
     @SerializedName("imagePath")
     var imagePath: String? = null
+
+    //世系
+    @ColumnInfo(name = "shixi")
+    @SerializedName("shixi")
+    var shixi: String? = null
+
+    //字辈
+    @ColumnInfo(name = "zibei")
+    @SerializedName("zibei")
+    var zibei: String? = null
+
+    //堂号
+    @ColumnInfo(name = "tanghao")
+    @SerializedName("tanghao")
+    var tanghao: String? = null
+
+    //是否健在
+    @ColumnInfo(name = "exist")
+    @SerializedName("exist")
+    var exist: Boolean? = true
+
+    //本人介绍
+    @ColumnInfo(name = "introduce")
+    @SerializedName("introduce")
+    var introduce: String? = null
 
     override fun toString(): String {
         return "{name='$name', id=$id, sex=$sex}"
