@@ -57,19 +57,19 @@ class FamilyMemberView : CombinedBaseView {
 
             if (familyMemberModel!!.memberEntity!!.sex == 1) {
                 findViewById<LinearLayout>(R.id.memberLayout).findViewById<TextView>(R.id.tvTitle).text = familyMemberModel!!.memberEntity.name
-                Glide.with(context).load(familyMemberModel!!.memberEntity.imagePath)
+                Glide.with(context).load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg")
                     .into(findViewById<LinearLayout>(R.id.memberLayout).findViewById(R.id.ivHead))
 
                 findViewById<LinearLayout>(R.id.spouseLayout).findViewById<TextView>(R.id.tvTitle).text = familyMemberModel!!.spouseEntity!!.name
-                Glide.with(context).load(familyMemberModel!!.spouseEntity!!.imagePath)
+                Glide.with(context).load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg")
                     .into(findViewById<LinearLayout>(R.id.spouseLayout).findViewById(R.id.ivHead))
             } else {
                 findViewById<LinearLayout>(R.id.spouseLayout).findViewById<TextView>(R.id.tvTitle).text = familyMemberModel!!.memberEntity.name
-                Glide.with(context).load(familyMemberModel!!.memberEntity.imagePath)
+                Glide.with(context).load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg")
                     .into(findViewById<LinearLayout>(R.id.spouseLayout).findViewById(R.id.ivHead))
 
                 findViewById<LinearLayout>(R.id.memberLayout).findViewById<TextView>(R.id.tvTitle).text = familyMemberModel!!.spouseEntity!!.name
-                Glide.with(context).load(familyMemberModel!!.spouseEntity!!.imagePath)
+                Glide.with(context).load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg")
                     .into(findViewById<LinearLayout>(R.id.memberLayout).findViewById(R.id.ivHead))
             }
         } else {
@@ -81,7 +81,7 @@ class FamilyMemberView : CombinedBaseView {
             layout(l, t, r, b)
 
             findViewById<LinearLayout>(R.id.memberLayout).findViewById<TextView>(R.id.tvTitle).text = familyMemberModel!!.memberEntity.name
-            Glide.with(context).load(familyMemberModel!!.memberEntity.imagePath)
+            Glide.with(context).load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg")
                 .into(findViewById<LinearLayout>(R.id.memberLayout).findViewById(R.id.ivHead))
         }
     }

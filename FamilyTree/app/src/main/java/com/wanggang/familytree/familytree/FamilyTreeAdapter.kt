@@ -104,7 +104,9 @@ class FamilyTreeAdapter {
             addBaseLineData(centerChildModel)
             centerChildModel.centerPoint?.parentPoint = familyMemberModel.centerPoint
             addBaseChildData(centerChildModel)
-
+            if (bottom < centerChildModel.level) {
+                bottom = centerChildModel.level
+            }
             var childSize = familyMemberModel.childModels!!.size
             val childIndex = childSize / 2
             // 当前结点左边的兄弟节点

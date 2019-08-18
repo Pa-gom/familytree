@@ -12,8 +12,11 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">46dp</item>
         <item name="android:layout_weight">2.5</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:gravity">center_vertical|right</item>
     </style>
+
     <style name="add_member_input_value">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">46dp</item>
@@ -21,5 +24,19 @@
         <item name="android:gravity">center_vertical|left</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:singleLine">true</item>
+        <item name="android:textColor">#aaaaaa</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="edit_tree_menu_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/shape_text_blue_border</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#1E90FF</item>
     </style>
 </resources>

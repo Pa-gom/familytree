@@ -9,8 +9,12 @@
     </array>
 
     <array name="sex_arr">
-        <item>性别</item>
-        <item>女</item>
         <item>男</item>
+        <item>女</item>
+    </array>
+
+    <array name="exist">
+        <item>是</item>
+        <item>否</item>
     </array>
 </resources>

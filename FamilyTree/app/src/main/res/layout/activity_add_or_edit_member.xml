@@ -5,24 +5,22 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#dddddd"
-        >
+>
     <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
-            >
-        <TextView
+    >
+        <ImageView
                 android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:padding="4dp"
-                android:layout_marginLeft="4dp"
-                android:text="返回"
-                android:textSize="14sp"
-                />
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/icon_back"
+        />
         <TextView
                 android:id="@+id/tv_title"
                 android:text="添加家谱成员"
@@ -31,7 +29,7 @@
                 android:layout_centerInParent="true"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                />
+        />
     </RelativeLayout>
     <LinearLayout
             android:layout_width="match_parent"
@@ -40,12 +38,12 @@
             android:background="@color/white"
             android:layout_marginTop="10dp"
             android:orientation="vertical"
-            >
+    >
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:orientation="horizontal"
-                >
+        >
             <TextView
                     android:text="基本信息"
                     android:layout_width="wrap_content"
@@ -54,116 +52,38 @@
                     android:padding="6dp"
                     android:gravity="center_vertical"
                     android:layout_gravity="center_vertical"
-                    />
+            />
         </LinearLayout>
         <View
-                android:background="#aaaaaa"
+                android:background="#dddddd"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
         >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="姓  名："/>
-            <EditText
-                    android:id="@+id/tv_name"
-                    style="@style/add_member_input_value"
-                    android:hint="必填，请输入姓名"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
-        >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="世  系："/>
-            <EditText
-                    android:id="@+id/tv_shixi"
-                    style="@style/add_member_input_value"
-                    android:hint="请输入世系"
-            />
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
-        >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="字  辈："/>
-            <EditText
-                    android:id="@+id/tv_zibei"
-                    style="@style/add_member_input_value"
-                    android:hint="请输入字辈"
-            />
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
-        >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="堂  号："/>
-            <EditText
-                    android:id="@+id/tv_tanghao"
-                    style="@style/add_member_input_value"
-                    android:hint="请输入堂号"
-            />
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
-        >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="性  别："/>
-            <RadioGroup
-                    android:id="@+id/rb_sex"
-                  style="@style/add_member_input_value"
-                  android:orientation="horizontal"
-            >
-                <RadioButton
-                        android:text="男"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <RadioButton
-                        android:text="女"
-                        android:layout_marginLeft="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-            </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:orientation="horizontal"
-        >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="是否健在："/>
-            <RadioGroup
-                    android:id="@+id/rb_exist"
-                    style="@style/add_member_input_value"
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
                     android:orientation="horizontal"
             >
-                <RadioButton
-                        android:text="是"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <RadioButton
-                        android:text="否"
-                        android:layout_marginLeft="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-            </RadioGroup>
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="姓  名："/>
+                <EditText
+                        android:id="@+id/tv_name"
+                        style="@style/add_member_input_value"
+                        android:hint="必填，请输入姓名"
+                />
+            </LinearLayout>
+            <View
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+            />
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
@@ -175,12 +95,146 @@
                     android:layout_height="46dp"
                     android:orientation="horizontal"
             >
-            <TextView
-                    style="@style/add_member_input_label"
-                    android:text="本人介绍："/>
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="世  系："/>
+                <EditText
+                        android:id="@+id/tv_shixi"
+                        style="@style/add_member_input_value"
+                        android:hint="请输入世系"
+                />
+            </LinearLayout>
             <View
-                    style="@style/add_member_input_value"
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
             />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+            >
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="字  辈："/>
+                <EditText
+                        android:id="@+id/tv_zibei"
+                        style="@style/add_member_input_value"
+                        android:hint="请输入字辈"
+                />
+            </LinearLayout>
+            <View
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+            />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+            >
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="堂  号："/>
+                <EditText
+                        android:id="@+id/tv_tanghao"
+                        style="@style/add_member_input_value"
+                        android:hint="请输入堂号"
+                />
+            </LinearLayout>
+            <View
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+            />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+            >
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="性  别："/>
+                <Spinner
+                        style="@style/add_member_input_value"
+                        android:id="@+id/sp_sex"
+                        android:entries="@array/sex_arr"/>
+            </LinearLayout>
+            <View
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+            />
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+            >
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="是否健在："/>
+                <Spinner
+                        style="@style/add_member_input_value"
+                        android:id="@+id/sp_exist"
+                        android:entries="@array/exist"/>
+            </LinearLayout>
+            <View
+                    android:background="#dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+            >
+                <TextView
+                        style="@style/add_member_input_label"
+                        android:text="本人介绍："/>
+                <View
+                        style="@style/add_member_input_value"
+                />
             </LinearLayout>
             <EditText
                     android:id="@+id/tv_introduce"

@@ -28,7 +28,7 @@ data class FamilyMemberEntity(var name: String) {
     @SerializedName("spouseId")
     var spouseId: Long? = null
 
-    // 外键
+    // 性别 0-男  1-女
     @ColumnInfo(name = "sex")
     @SerializedName("sex")
     var sex: Int = 0
@@ -58,10 +58,10 @@ data class FamilyMemberEntity(var name: String) {
     @SerializedName("tanghao")
     var tanghao: String? = null
 
-    //是否健在
+    //是否健在 0-是 1-否
     @ColumnInfo(name = "exist")
     @SerializedName("exist")
-    var exist: Boolean? = true
+    var exist: Int = 0
 
     //本人介绍
     @ColumnInfo(name = "introduce")

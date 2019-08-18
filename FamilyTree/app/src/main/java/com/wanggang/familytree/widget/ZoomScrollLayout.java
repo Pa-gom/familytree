@@ -159,14 +159,14 @@ public class ZoomScrollLayout extends RelativeLayout implements ScaleGestureDete
     @Override
     public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
         Logger.i("MotionEvent.onScale");
-        if (mode == MODE.ZOOM) {
-            float scaleFactor = scaleGestureDetector.getScaleFactor();
-            float tempScale = mLastScale * scaleFactor;
-            if (tempScale <= MAX_ZOOM && tempScale >= MIN_ZOOM) {
-                totleScale = tempScale;
-                applyScale(totleScale);
-            }
-        }
+//        if (mode == MODE.ZOOM) {
+//            float scaleFactor = scaleGestureDetector.getScaleFactor();
+//            float tempScale = mLastScale * scaleFactor;
+//            if (tempScale <= MAX_ZOOM && tempScale >= MIN_ZOOM) {
+//                totleScale = tempScale;
+//                applyScale(totleScale);
+//            }
+//        }
         return false;
     }
 

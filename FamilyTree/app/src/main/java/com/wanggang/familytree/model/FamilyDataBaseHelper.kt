@@ -34,6 +34,16 @@ class FamilyDataBaseHelper constructor(context: Context) {
     }
 
     /**
+     * 查询最新插入的root节点（最新插入，没有返回id），查询父亲或母亲节点
+     * 性别为男，没有父亲节点的最新插入的是根节点，即祖先（因为不能在中间节点添加父亲）
+     *     例外： 女儿节点，新增丈夫后也是没有父亲节点（加载显示时为避免出问题，把这一类节点新增时fatherId设置为-1即可）
+     * 母亲节点随时可能在中间插入节点
+     */
+    fun getLastInsertRootMembers(sex: Int):FamilyMemberEntity{
+        return appDataBase.familyMemberDao().getLastInsertRootMembers(sex)
+    }
+
+    /**
      * 根据id获取配偶Member
      */
     fun getSpouseMember(id: Long): FamilyMemberEntity{
@@ -59,5 +69,18 @@ class FamilyDataBaseHelper constructor(context: Context) {
      */
     fun insertMember(member: FamilyMemberEntity) {
         appDataBase.familyMemberDao().insertItem(member)
+    }
+
+    /**
+     * 删除节点，只能删除没有子节点的终端节点;必须在非主线程中进行
+     */
+    fun deleteMember(member: FamilyMemberEntity):Boolean{
+        var memberList = getChildMembers(member?.id)
+        if(memberList?.size > 0){
+            return false
+        }else{
+            appDataBase.familyMemberDao().deleteItem(member)
+            return true
+        }
     }
 }

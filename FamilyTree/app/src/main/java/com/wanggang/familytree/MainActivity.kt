@@ -48,27 +48,27 @@ class MainActivity : AppCompatActivity() {
 
                 // 插入第一条数据，同时也是整个家族树的跟节点
                 var familyMember = FamilyMemberEntity("王根ss")
-                familyMember.imagePath = "111.jpg"
+                familyMember.imagePath = "http://www.qqpk.cn/Article/UploadFiles/201202/20120219130832435.jpg"
                 familyMember.phone = "18156094171"
                 familyMember.sex = 1
                 FamilyDataBaseHelper.getInstance(this).insertMember(familyMember)
 
                 familyMember = FamilyMemberEntity("王明22")
-                familyMember.imagePath = "222.jpg"
+                familyMember.imagePath = "http://www.qqpk.cn/Article/UploadFiles/201202/20120219130832435.jpg"
                 familyMember.phone = "18156096666"
                 familyMember.fatherId = 1 // 父亲id为1，表示其父亲未第1条插入的数据，也就是上面的王根
                 familyMember.sex = 1
                 FamilyDataBaseHelper.getInstance(this).insertMember(familyMember)
 
                 familyMember = FamilyMemberEntity("王芸")
-                familyMember.imagePath = "222.jpg"
+                familyMember.imagePath = "http://www.qqpk.cn/Article/UploadFiles/201202/20120219130832435.jpg"
                 familyMember.phone = "18156096666"
                 familyMember.fatherId = 1 // 父亲id为1，表示其父亲未第1条插入的数据，也就是上面的王根
                 familyMember.sex = 0
                 FamilyDataBaseHelper.getInstance(this).insertMember(familyMember)
 
                 familyMember = FamilyMemberEntity("王恩")
-                familyMember.imagePath = "222.jpg"
+                familyMember.imagePath = "http://www.qqpk.cn/Article/UploadFiles/201202/20120219130832435.jpg"
                 familyMember.phone = "18156096666"
                 familyMember.fatherId = 2 // 父亲id为2，表示其父亲未第2条插入的数据，也就是上面的王明
                 familyMember.sex = 0
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
             var familyMember = FamilyDataBaseHelper.getInstance(this).getFamilyMember(1)
 
             if (familyMember != null) {
-//                var familyMemberModel = familyMember.generateMember(this, 0)
+//                var familyMemberEntity = familyMember.generateMember(this, 0)
 //                var adapter = com.wanggang.familytree.familytree.FamilyTreeAdapter()
-//                adapter.dealWithData(familyMemberModel)
+//                adapter.dealWithData(familyMemberEntity)
                 var personEntity = familyMember.genFamilyMember(this, 0)
                 it.onNext(personEntity)
             } else {
