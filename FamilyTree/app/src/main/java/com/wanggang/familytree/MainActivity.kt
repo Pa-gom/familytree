@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         Flowable.create(FlowableOnSubscribe<PersonEntity> {
 
             // sharePreference存储firstIn，标记当前是否第一次启动
-            var firstIn by Preference<String>("firstIn", "1")
+            var firstIn by Preference<String>("firstIn", "1", this)
             println("firstIn = $firstIn")
             if ("1" == firstIn) {
 

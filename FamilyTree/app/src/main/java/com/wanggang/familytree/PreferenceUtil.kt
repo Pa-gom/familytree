@@ -14,9 +14,9 @@ import kotlin.reflect.KProperty
  * @update 2017/6/23 16:29
  * @version V1.0
  */
-class Preference<T>(val name: String, val default: T) {
+class Preference<T>(val name: String, val default: T, val context:Context) {
 
-    val prefs: SharedPreferences by lazy { App.instance.applicationContext.getSharedPreferences(name, Context.MODE_PRIVATE) }
+    val prefs: SharedPreferences by lazy { context.getSharedPreferences(name, Context.MODE_PRIVATE) }
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
         return getSharedPreferences(name, default)

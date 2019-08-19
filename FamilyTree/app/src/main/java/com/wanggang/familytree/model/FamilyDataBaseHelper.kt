@@ -10,9 +10,17 @@ class FamilyDataBaseHelper constructor(context: Context) {
     private val appDataBase = Room.databaseBuilder(context, FamilyDataBase::class.java,
         "family.db").build()!!
 
+
+
     companion object {
         @Volatile
         var INSTANCE: FamilyDataBaseHelper? = null
+        @Volatile
+        var OnDataInsertListener: ((FamilyMemberEntity) -> Unit)? = null
+        @Volatile
+        var OnDataDeleteListener: ((FamilyMemberEntity) -> Unit)? = null
+        @Volatile
+        var OnDataUpdateListener: ((FamilyMemberEntity) -> Unit)? = null
 
         fun getInstance(context: Context): FamilyDataBaseHelper {
             if (INSTANCE == null) {
@@ -24,6 +32,24 @@ class FamilyDataBaseHelper constructor(context: Context) {
             }
             return INSTANCE!!
         }
+
+
+        fun setDataInsertListener(listener: (FamilyMemberEntity) -> Unit){
+            synchronized(FamilyDataBaseHelper::class) {
+                this.OnDataInsertListener = listener
+            }
+        }
+        fun setDataDeleteListener(listener: (FamilyMemberEntity) -> Unit){
+            synchronized(FamilyDataBaseHelper::class) {
+                this.OnDataDeleteListener = listener
+            }
+        }
+        fun setDataUpdateListener(listener: (FamilyMemberEntity) -> Unit){
+            synchronized(FamilyDataBaseHelper::class) {
+                this.OnDataUpdateListener = listener
+            }
+        }
+
     }
 
     /**
@@ -61,6 +87,7 @@ class FamilyDataBaseHelper constructor(context: Context) {
      * 更新FamilyMemberEntity;必须在非主线程中进行
      */
     fun updateMember(member: FamilyMemberEntity) {
+        OnDataUpdateListener!!(member)
         appDataBase.familyMemberDao().updateItem(member)
     }
 
@@ -68,6 +95,7 @@ class FamilyDataBaseHelper constructor(context: Context) {
      * 插入FamilyMemberEntity;必须在非主线程中进行
      */
     fun insertMember(member: FamilyMemberEntity) {
+        OnDataInsertListener!!(member)
         appDataBase.familyMemberDao().insertItem(member)
     }
 
@@ -79,6 +107,7 @@ class FamilyDataBaseHelper constructor(context: Context) {
         if(memberList?.size > 0){
             return false
         }else{
+            OnDataDeleteListener!!(member)
             appDataBase.familyMemberDao().deleteItem(member)
             return true
         }
